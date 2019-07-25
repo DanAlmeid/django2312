@@ -1,0 +1,12 @@
+{% extends 'shared/layout.html' %}
+{% block conteudo %}
+
+
+<h1>sobre</h1>
+<ul>
+    {% for pessoa in pessoas %}
+    <li>{{pessoa.nome}} {{pessoa.sobrenome}}</li>
+    {% endfor}}
+</ul>
+
+{% endblock %}
