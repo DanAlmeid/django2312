@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from website.models import Pessoa
+from website.models import Pessoa, Ideia
 # Create your views here.
 
 def index(request):
@@ -15,8 +15,10 @@ def index(request):
     return render(request,'index.html', contexto)
 
 def sobre(request):
-    pessoa = Pessoa.objects.all()
+    # essa pagina listara ideias e seus criadoes
     contexto = {
         'pessoas':pessoa
     }
     return render(request, 'sobre.html', contexto)
+
+

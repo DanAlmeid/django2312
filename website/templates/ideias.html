@@ -1,0 +1,14 @@
+{% extends 'shared/layout.html' %}
+{% block conteudo %}
+
+    <h1>Ideias malucas</h1>
+    <h2>Cadastre a sua ideia</h2>
+    {{msg}}
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for=""></label>
+    </form>
+
+    <!-- {% include 'shared/teste.html' %} -->
+
+{% endblock %}
