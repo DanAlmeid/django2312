@@ -57,5 +57,5 @@ def cadastrar_ideia(request):
             ideia.categorias = request.POST.get('categoria')
             ideia.caregorias = request.POST.get('caregorias_outros')
             ideia.save()
-            redirect('/sobre')
+            return redirect('/sobre')
     return render(request, 'ideias.html', contexto)

@@ -1,11 +1,50 @@
+html, body{
+    height: 100vh;
+}
 body{
     background-color: yellowgreen;
     color: purple;
     margin: 0;
 }
 
-header{
+nav{
     background-color: blueviolet;
-    height: 20px;
-    margin: 0;  
+    height: 7vh;
+    margin: 0; 
+    display: flex;
+    align-content: flex-end;
+    flex-direction: row-reverse;
 }
+
+nav a{
+    text-decoration: none;
+    border-radius: 2px;
+    border-color: green;
+    border-style: solid;
+    border-radius: 20px;
+    font-size: 20pt;
+    padding:  3px;
+    color: skyblue;
+}
+nav a:hover{
+    border-color: red;
+}
+
+nav a:visited{
+    color: skyblue;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 50%;;
+
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
+

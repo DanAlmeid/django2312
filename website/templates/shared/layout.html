@@ -10,10 +10,18 @@
     <title>Document</title>
 </head>
 <body>
-    <header></header>
-    {% block conteudo %}
+    <nav>
+        <a href="/login">login</a>
+        <a href="/sobre">Ideias</a>
+        <a href="/">Cadastro</a>
+    </nav>
 
-    {% endblock %}
+    <main>
+        {% block conteudo %}
+        
+        {% endblock %}
+    </main>
+
 
     <footer></footer>
 </body>
