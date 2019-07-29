@@ -1,28 +1,28 @@
 {% extends 'shared/layout.html' %}
 {% block conteudo %}
 
-    <h1>Cadastre suas ideias malucas</h1>
-    <h2>Cadastre-se</h2>
-    {{msg}}
-    <form action="/" method="post">
-        {% csrf_token %}
-        <label>Nome</label>
-        <input type="text" name= "nome" required>
-        
-        <label>Sobrenome</label>
-        <input type="text" name= "sobrenome" required>
+<h1>Cadastre suas ideias malucas</h1>
+<h2>Cadastre-se</h2>
+{{msg}}
+<form action="/" method="post">
+    {% csrf_token %}
+     
+    <label>Nome</label>
+    <input type="text" name= "nome" required>
+    
+    <label>Sobrenome</label>
+    <input type="text" name= "sobrenome" required>
 
-        <label>E-mail</label>
-        <input type="email" name = "email" required>
+    <label>E-mail</label>
+    <input type="email" name = "email" required>
 
-        <select name="genero" >
-            <option value="F">Feminino</option>
-            <option value="M">Masculino</option>
-            <option value="O">Outros</option>
-        </select>
+    <select name="genero" >
+        <option value="F">Feminino</option>
+        <option value="M">Masculino</option>
+        <option value="O">Outros</option>
+    </select>
 
-        <input type="submit" value = 'Cadastrar Pessoa'>
-
-    </form>
+    <input type="submit" value = 'Cadastrar Pessoa'>
+</form>
 
 {% endblock %}

@@ -1,18 +1,18 @@
 {% extends 'shared/layout.html' %}
 {% block conteudo %}
 
-
+{{msg}}
 <h1>Listagem das Ideias</h1>
-    <p>
-        {% for ideia in ideias %}^
+    {% for ideia in ideias %}
         <div>
-
             <p>{{ideia.pessoa.nome}}</p>
             <p>{{ideia.titulo}}</p>
             <p>{{ideia.categoria}}</p>
             <p>{{ideia.descricao}}</p>
+            <a href="/deletar_ideia/{{ideia.id}}">
+                <input type="button" value="deletar" >
+            </a>
         </div>
-            {% endfor %}
-    </p>
+    {% endfor %}
 
 {% endblock %}

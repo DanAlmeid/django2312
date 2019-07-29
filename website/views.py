@@ -9,7 +9,7 @@ def index(request):
         pessoa.nome = request.POST.get('nome')
         pessoa.sobrenome = request.POST.get('sobrenome')
         pessoa.email = request.POST.get('email')
-        pessoa.genero = request.POST.get('genero')
+        pessoa.genero    = request.POST.get('genero')
         pessoa.save()
         contexto = {'msg':'usuario cadastrado'}
         return render(request,'login.html', contexto)
@@ -17,10 +17,16 @@ def index(request):
 
 def sobre(request):
     # essa pagina listara ideias e seus criadoes
-    ideias = Ideia.objects.all()
+    ideias = Ideia.objects.filter(ativo=True).all()
     contexto = {
         'ideias':ideias
     }
+    if request.method == 'POST':
+        ideias.ativo = False
+        ideias.save()
+        return render(request, 'sobre.html', contexto)
+
+
     return render(request, 'sobre.html', contexto)
 
 
@@ -59,3 +65,11 @@ def cadastrar_ideia(request):
             ideia.save()
             return redirect('/sobre')
     return render(request, 'ideias.html', contexto)
+
+def deletar_ideia(request, id):
+    ideia = Ideia.objects.filter(id=id).first()
+    if ideia is not None:
+        ideia.ativo = False
+        ideia.save()
+        return redirect('/sobre')
+    return render(request,'sobre.html', {'msg': 'Ops, deu ruim'})
